@@ -1,0 +1,79 @@
+
+Asaad Husein
+Student ID: 101238276
+COMP 3005 - Fall 2024
+
+
+Student Database Management System
+COMP 3005 Assignment - A Python application for managing student records in PostgreSQL.
+
+Video Demonstration (please fogive the sound quality its not the best)
+https://youtu.be/tyAOWMhQGVI
+
+
+Prerequisites
+Python
+PostgreSQL 
+pgAdmin 4 
+
+
+Installation
+setp 1. Install Python Library
+pip install psycopg2-binary
+
+step 2. Set Up Database
+
+Open pgAdmin or psql
+Run Database_setup.sql to create the table
+Run Database_insert.sql to add initial data
+
+step 3. Configure Connection (this is already in the code but just to mention it here as to make sure the steps are understood)
+pythonconn = psycopg2.connect(
+    host="localhost",
+    database="DataBase",
+    user="postgres",
+    password="YOUR_PASSWORD",  # Change this
+    port=5432                   # Default is 5432, not 5433
+)
+
+Running the Application
+python test.py
+
+----Functions----
+check_connection()
+Connects to the PostgreSQL database and checks for errors.
+
+-----
+getAllStudents(conn)
+Retrieves and displays all student records.
+Example:
+pythongetAllStudents(conn)
+
+------
+addStudent(first_name, last_name, email, enrollment_date, conn)
+Adds a new student to the database with an auto-generated ID.
+Example:
+pythonaddStudent("John", "Doe", "john@example.com", "2025-09-01", conn)
+
+------
+updateStudentEmail(student_id, new_email, conn)
+Updates the email address for a specific student.
+Example:
+pythonupdateStudentEmail(4, "newemail@example.com", conn)
+
+-------
+deleteStudent(student_id, conn)
+Deletes a student record by student ID.
+Example:
+pythondeleteStudent(4, conn)
+
+Troubleshooting
+Connection Error?
+
+Check PostgreSQL is running
+Verify your password and port number
+Default port is 5432 
+
+Module Not Found?
+make sure you do hpip install psycopg2-binary to use library commands
+
