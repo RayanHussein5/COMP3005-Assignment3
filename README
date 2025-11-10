@@ -37,7 +37,7 @@ pythonconn = psycopg2.connect(
 )
 
 Running the Application
-python test.py
+Download test.py and run it using python test.py
 
 ----Now on to the Functions that I have created within the code----
 check_connection()
@@ -76,5 +76,6 @@ Default port is 5432
 
 Module Not Found?
 Make sure you do pip install psycopg2-binary to use the library commands
+
 
 
